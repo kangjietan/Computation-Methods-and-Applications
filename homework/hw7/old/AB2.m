@@ -1,0 +1,2 @@
+%function [y,t] = AB2(fun,y0,NSTEPS,DT,IOSTEPS)  S = floor(NSTEPS/IOSTEPS) + 1;  y = y0;  t = 0;  tsi = 0;  u = zeros(3,S);  u(:,1) = y0 + 0.5 * DT * (fun(y0+DT*fun(y0,tsi),tsi+DT) + fun(y0,tsi));  u(:,2) = u(1) + 0.5 * DT * (fun(y0+DT*fun(y0,tsi+1),tsi+DT+1) + fun(y0,tsi+1));    for i = 2: NSTEPS    ts = (i)*DT;    u(:,i+1) = u(:,i) + 0.5 * DT * (3 * fun(u(:,i),ts) - fun(u(:,i-1)+(ts-1)));        if mod(i, IOSTEPS) == 0      y = [y u(:,i+1)];      t = [t ts+DT]    end
+  endend

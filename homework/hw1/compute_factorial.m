@@ -1,0 +1,2 @@
+% Calculate product of all positive integers less than or equal to n% Function input -> natural number% Function output -> factorial of inputfunction [b] = compute_factorial(n)  m = n;  % Input number in m  b = 1;  % 0 * input = 0  while (m >= 1)  % If input is 1 or 0. ans = 1 -> b    b = b * m;  % 1 * input number    m = m - 1;	% Next number down from input  end 
+end
