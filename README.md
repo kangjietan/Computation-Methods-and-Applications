@@ -1,2 +1,2 @@
-# Computation-Methods-and-Applications
+# Computational-Methods-and-Applications
 UCSC work
